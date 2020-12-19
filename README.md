@@ -1,7 +1,6 @@
 # pandas-machine
 
-It previews csv files first 5 row.
-
+It previews csv file's first 5 row.
 
 It shows Column names
 
