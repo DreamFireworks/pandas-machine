@@ -2,6 +2,7 @@
 
 Kullandığım paketler:
 Pandas,
+Numpy,
 Tkinter,
 Matplotlib,
 openpyxl
