@@ -3,7 +3,8 @@
 Kullandığım paketler:
 Pandas,
 Tkinter,
-Matplotlib
+Matplotlib,
+openpyxl
 
 Amacım belirli Pandas fonksiyonlarını yazmaya gerek duymadan sadece butonlar aracılığıyla kullanabilmek.
 
