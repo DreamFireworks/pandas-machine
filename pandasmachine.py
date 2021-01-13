@@ -387,54 +387,38 @@ describe_button.place(x=85,
               height=40)
 
 
-# Add
+# Button9
 
-def addb():
-    global data1
-    data1[col_one.get()] += num1.get()
-    preview.config(text=res.head())
-
-add_button = Button(window, 
-                      text="Add",
-                      command=addb,
+Button_9 = Button(window, 
+                      text="Button9",
+                      command=passs,
                       justify="center",
                       bg="#efefef")
-add_button.place(x=170,
+Button_9.place(x=170,
               y=205,
               width=75,
               height=40)
               
-# Sub
+# Button10
 
-def subb():
-    global data1
-    data1=data1.sub(num1.get())
-    result.config(text=res)
-
-sub_button = Button(window, 
-                      text="Sub",
+Button_10 = Button(window, 
+                      text="Button10",
                       command=passs,
                       justify="center",
                       bg="#efefef")
-sub_button.place(x=170,
+Button_10.place(x=170,
                y=250,
                width=75,
                height=40)
 
-# Mul
- 
-def mulb():
-    global data1
-    res=data1.mul(num1.get())
-    preview.config(text=res.head()) 
- 
- 
-mul_button = Button(window, 
-                      text="Mul",
-                      command=mulb,
+# Button11
+
+Button_11 = Button(window, 
+                      text="Button11",
+                      command=passs,
                       justify="center",
                       bg="#efefef")
-mul_button.place(x=170,
+Button_11.place(x=170,
               y=295,
               width=75,
               height=40)
@@ -509,13 +493,21 @@ button16.place(x=255,
 # RIGHTSIDE BUTTONS Graphics.
 
 # Line
- 
-button17 = Button(window, 
+def linep():
+    global data1
+    figure1 = plt.Figure(figsize=(2,1), dpi=50)
+    ax1 = figure1.add_subplot(111)
+    ax1.plot(data1[col_one.get()], color = 'g')
+    line1 = FigureCanvasTkAgg(figure1, window) 
+    line1.get_tk_widget().place(x=525,y=205,width=240,height=175)
+    ax1.set_xlabel(data1[col_one.get()])
+
+line_plot = Button(window, 
                       text="Line",
-                      command=passs,
+                      command=linep,
                       justify="center",
                       bg="#efefef")
-button17.place(x=345,
+line_plot.place(x=345,
               y=205,
               width=75,
               height=40)
@@ -564,10 +556,11 @@ scatter_plot.place(x=345,
               width=75,
               height=40)
 
-# Bar
+# button20
+
 
 button20 = Button(window, 
-                      text="Bar",
+                      text="Button20",
                       command=passs,
                       justify="center",
                       bg="#efefef")
