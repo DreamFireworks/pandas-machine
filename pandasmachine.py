@@ -129,7 +129,7 @@ save.place(x=260,
 col_one=Entry(window,
               justify="center",
               bg="#dedede")
-col_one.insert(0, 'Column1')
+col_one.insert(0, 'Column1(X)')
 col_one.place(x=340,
               y=5,
               width=100,
@@ -139,7 +139,7 @@ col_one.place(x=340,
 col_two=Entry(window,
               justify="center",
               bg="#dedede")
-col_two.insert(0, 'Column2')
+col_two.insert(0, 'Column2(Y)')
 col_two.place(x=445,
               y=5,
               width=100,
