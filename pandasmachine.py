@@ -410,7 +410,6 @@ def stdb():
     global data1
     res=float(np.std(data1[col_one.get()]))
     result.config(text="Std. Deviation of {} Column is {:.4f}".format(col_one.get(),res))
-    print(res)
 
 stddev_button = Button(window, 
                       text="Std Deviation",
