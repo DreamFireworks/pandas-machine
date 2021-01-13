@@ -392,7 +392,7 @@ describe_button.place(x=85,
 def varb():
     global data1
     res = np.var(data1[col_one.get()])
-    result.config(text="Variance of {} Column is {}".format(col_one.get(),res))
+    result.config(text="Variance of {} Column is {:.4f}".format(col_one.get(),res))
 
 variance_button = Button(window, 
                       text="Variance",
@@ -404,14 +404,20 @@ variance_button.place(x=170,
               width=75,
               height=40)
               
-# Button10
+# Standar Deviation
 
-Button_10 = Button(window, 
-                      text="Button10",
-                      command=passs,
+def stdb():
+    global data1
+    res=float(np.std(data1[col_one.get()]))
+    result.config(text="Std. Deviation of {} Column is {:.4f}".format(col_one.get(),res))
+    print(res)
+
+stddev_button = Button(window, 
+                      text="Std Deviation",
+                      command=stdb,
                       justify="center",
                       bg="#efefef")
-Button_10.place(x=170,
+stddev_button.place(x=170,
                y=250,
                width=75,
                height=40)
