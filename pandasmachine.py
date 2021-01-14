@@ -404,7 +404,7 @@ variance_button.place(x=170,
               width=75,
               height=40)
               
-# Standar Deviation
+# Standard Deviation
 
 def stdb():
     global data1
@@ -422,14 +422,20 @@ stddev_button.place(x=170,
                width=75,
                height=40)
 
-# Button11
+# Missing Values
 
-Button_11 = Button(window, 
-                      text="Button11",
-                      command=passs,
+def missingval():
+    global data1
+    res = data1.isnull().sum()
+    preview.config(text=res)
+    result.config(text="Missing Values")
+
+missing_button = Button(window, 
+                      text="Missing Val.",
+                      command=missingval,
                       justify="center",
                       bg="#efefef")
-Button_11.place(x=170,
+missing_button.place(x=170,
               y=295,
               width=75,
               height=40)
