@@ -8,6 +8,7 @@ import openpyxl
 
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+import seaborn as sns
 
 
 window = Tk()
@@ -572,52 +573,84 @@ scatter_plot.place(x=345,
               width=75,
               height=40)
 
-# button20
+# Regplot   
 
+def regressionp():
+    global data1
+    figure1 = plt.Figure(figsize=(2,1), dpi=50)
+    ax1 = figure1.add_subplot(111)
+    sns.regplot(data1[col_one.get()],data1[col_two.get()], color = 'g',ax=ax1)
+    regpl = FigureCanvasTkAgg(figure1, window) 
+    regpl.get_tk_widget().place(x=525,y=205,width=240,height=175)
 
-button20 = Button(window, 
-                      text="Button20",
-                      command=passs,
+regression_button = Button(window, 
+                      text="Regression",
+                      command=regressionp,
                       justify="center",
                       bg="#efefef")
-button20.place(x=345,
+regression_button.place(x=345,
               y=340,
               width=75, 
               height=40)
 
-# Button 21
- 
-button21 = Button(window, 
-                      text="Button21",
-                      command=passs,
+# BoxPlot
+
+def boxplotb():
+    global data1
+    figure1 = plt.Figure(figsize=(2,1), dpi=50)
+    ax1 = figure1.add_subplot(111)
+    sns.boxplot(data1[col_one.get()], color = 'g',ax=ax1)
+    boxpl = FigureCanvasTkAgg(figure1, window) 
+    boxpl.get_tk_widget().place(x=525,y=205,width=240,height=175)
+
+boxplot_button = Button(window, 
+                      text="Boxplot",
+                      command=boxplotb,
                       justify="center",
                       bg="#efefef")
-button21.place(x=430,
+boxplot_button.place(x=430,
               y=205,
               width=75,
               height=40)
               
-# Button 22
+# SwarmPlot
 
-button22 = Button(window, 
-                      text="Button22",
-                      command=passs,
+def swarmp():
+    global data1
+    figure1 = plt.Figure(figsize=(2,1), dpi=50)
+    ax1 = figure1.add_subplot(111)
+    sns.swarmplot(data1[col_one.get()],color='g',ax=ax1)
+    swarmpl = FigureCanvasTkAgg(figure1, window) 
+    swarmpl.get_tk_widget().place(x=525,y=205,width=240,height=175)
+
+        
+swarm_button = Button(window, 
+                      text="Swarm Plot",
+                      command=swarmp,
                       justify="center",
                       bg="#efefef")
-button22.place(x=430,
+swarm_button.place(x=430,
              y=250,
              width=75,
              height=40)
 
 
-# Button 23
+# kdeplot   
 
-button23 = Button(window, 
-                      text="Button23",
-                      command=passs,
+def kdepl():
+    global data1
+    figure1 = plt.Figure(figsize=(2,1), dpi=50)
+    ax1 = figure1.add_subplot(111)
+    sns.kdeplot(data1[col_one.get()],color='g',ax=ax1)
+    swarmpl = FigureCanvasTkAgg(figure1, window) 
+    swarmpl.get_tk_widget().place(x=525,y=205,width=240,height=175)
+
+kde_button = Button(window, 
+                      text="KDE Plot",
+                      command=kdepl,
                       justify="center",
                       bg="#efefef")
-button23.place(x=430,
+kde_button.place(x=430,
               y=295,
               width=75,
               height=40)
