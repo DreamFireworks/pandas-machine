@@ -1,3 +1,4 @@
+import sys
 from tkinter import *
 import numpy as np
 import pandas as pd
@@ -78,7 +79,8 @@ xlsbut.place(x=105,
 # Import
 data1=[]
 def readselect():
-    if selected=="excel":
+    try:
+        if selected=="excel":
             excell=pd.read_excel(filename,engine='openpyxl')
             #excell=pd.DataFrame(excell)
             messagebox.showinfo("Done!","Excel File imported!")
@@ -90,7 +92,7 @@ def readselect():
             column_names.config(text=np.array(data1.columns))
             preview.config(text=data1.head(5))
 
-    else:
+        else:
             csvv=pd.read_csv(filename)
             messagebox.showinfo("Done!", "CSV File imported!")
             global data
@@ -100,7 +102,12 @@ def readselect():
 #            csvhead.config(text=csv.head())
             column_names.config(text=np.array(data1.columns))
             preview.config(text=data1.head(5))
-    
+        print("Data imported")
+    except FileNotFoundError:
+        messagebox.showinfo("Error!", "File not found")
+    except:
+        messagebox.showinfo("Error!", "Something went wrong!")
+        
 importbutton = Button(window, 
                       text="Import",
                       command=readselect,
@@ -250,10 +257,18 @@ def passs():
 # Mean
 
 def meanb():
-    global data1
-    res=data1[col_one.get()].mean()
-    result.config(text="Mean of {} Column is {}".format(col_one.get(),res))
-    
+    try:
+        global data1
+        res=data1[col_one.get()].mean()
+        result.config(text="Mean of {} Column is {}".format(col_one.get(),res))
+        print("Mean: ",res)
+    except KeyError:
+        messagebox.showinfo("Error!","Column name is not available")
+    except TypeError:
+        messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
+    except:
+        messagebox.showinfo("Error!","Something went wrong!")
+        
 mean_button = Button(window, 
                      text="Mean",
                      command=meanb,
@@ -267,9 +282,17 @@ mean_button.place(x=0,
 # Median
 
 def medianb():
-    global data1
-    res= data1[col_one.get()].median()
-    result.config(text="Median of {} Column is {}".format(col_one.get(),res))
+    try:
+        global data1
+        res= data1[col_one.get()].median()
+        result.config(text="Median of {} Column is {}".format(col_one.get(),res))
+        print("Median calculated: ",res)
+    except KeyError:
+        messagebox.showinfo("Error!","Column name is not available")
+    except TypeError:
+        messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
+    except:
+        messagebox.showinfo("Error!","Something went wrong!")
 
 median_button = Button(window, 
                       text="Median",
@@ -284,10 +307,17 @@ median_button.place(x=0,
 # Mode
 
 def modeb():
-    global data1
-    res=data1[col_one.get()].mode()
-    result.config(text="Mode of {} Column is {}".format(col_one.get(),res))
-
+    try:
+        global data1
+        res=list(data1[col_one.get()].mode())
+        result.config(text="Mode of {} Column = {}".format(col_one.get(),res))
+        print("Mode: ",res)
+    except KeyError:
+        messagebox.showinfo("Error!","Column name is not available")
+    except TypeError:
+        messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
+    except:
+        messagebox.showinfo("Error!","Something went wrong!")
 
 mode_button = Button(window, 
                       text="Mode",
@@ -302,10 +332,18 @@ mode_button.place(x=0,
 # observations
 
 def obsb():
-    global data1
-    res = len(data1.index)
-    result.config(text="Total Observation(s): {}".format(res))
-    
+    try:
+        global data1
+        res = len(data1.index)
+        result.config(text="Total Observation(s): {}".format(res))
+        print("Observations: ",res)
+    except KeyError:
+        messagebox.showinfo("Error!","Column name is not available")
+    except TypeError:
+        messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
+    except:
+        messagebox.showinfo("Error!","Something went wrong!")
+        
 obs_button = Button(window, 
                       text="Obs",
                       command=obsb,
@@ -319,9 +357,17 @@ obs_button.place(x=0,
 # Min 
  
 def minb():
-    global data1
-    res=data1[col_one.get()].min()
-    result.config(text="Min. of {} Column is {}".format(col_one.get(),res))
+    try:
+        global data1
+        res=data1[col_one.get()].min()
+        result.config(text="Min. of {} Column is {}".format(col_one.get(),res))
+        print("Min. : ",res)
+    except KeyError:
+        messagebox.showinfo("Error!","Column name is not available")
+    except TypeError:
+        messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
+    except:
+        messagebox.showinfo("Error!","Something went wrong!")
 
 min_button = Button(window, 
                       text="Min",
@@ -336,10 +382,18 @@ min_button.place(x=85,
 # Max
 
 def maxb():
-    global data1
-    res=data1[col_one.get()].max()
-    result.config(text="Max. of {} Column is {}".format(col_one.get(),res))
-    
+    try:
+        global data1
+        res=data1[col_one.get()].max()
+        result.config(text="Max. of {} Column is {}".format(col_one.get(),res))
+        print("Max. : ",res)
+    except KeyError:
+        messagebox.showinfo("Error!","Column name is not available")
+    except TypeError:
+        messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
+    except:
+        messagebox.showinfo("Error!","Something went wrong!")
+        
 max_button = Button(window, 
                       text="Max",
                       command=maxb,
@@ -354,10 +408,17 @@ max_button.place(x=85,
 # Shape
 
 def shapeb():
-    global data1
-    res=data1.shape
-    result.config(text="(Row, Column) = " + str(res))
-
+    try:
+        global data1
+        res=data1.shape
+        result.config(text="(Row, Column) = " + str(res))
+        print("Shape: ", res)
+    except KeyError:
+        messagebox.showinfo("Error!","Column name is not available")
+    except TypeError:
+        messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
+    except:
+        messagebox.showinfo("Error!","Something went wrong!")
 
 shape_button = Button(window, 
                       text="Shape",
@@ -372,11 +433,19 @@ shape_button.place(x=85,
 # Describe
 
 def descb():
-    global data1
-    res=data1.describe()
-    preview.config(text=res)
-    result.config(text="Descriptive Statistics")
-
+    try:
+        global data1
+        res=data1.describe()
+        preview.config(text=res)
+        result.config(text="Descriptive Statistics")
+        print("Description: \n ", res)
+    except KeyError:
+        messagebox.showinfo("Error!","Column name is not available")
+    except TypeError:
+        messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
+    except:
+        messagebox.showinfo("Error!","Something went wrong!")
+        
 describe_button = Button(window, 
                       text="Describe",
                       command=descb,
@@ -391,9 +460,17 @@ describe_button.place(x=85,
 # Variance
 
 def varb():
-    global data1
-    res = np.var(data1[col_one.get()])
-    result.config(text="Variance of {} Column is {:.4f}".format(col_one.get(),res))
+    try:
+        global data1
+        res = np.var(data1[col_one.get()])
+        result.config(text="Variance of {} Column is {:.4f}".format(col_one.get(),res))
+        print("Variance calculated: ", res)
+    except KeyError:
+        messagebox.showinfo("Error!","Column name is not available")
+    except TypeError:
+        messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
+    except:
+        messagebox.showinfo("Error!","Something went wrong!")
 
 variance_button = Button(window, 
                       text="Variance",
@@ -408,10 +485,18 @@ variance_button.place(x=170,
 # Standard Deviation
 
 def stdb():
-    global data1
-    res=float(np.std(data1[col_one.get()]))
-    result.config(text="Std. Deviation of {} Column is {:.4f}".format(col_one.get(),res))
-
+    try:
+        global data1
+        res=float(np.std(data1[col_one.get()]))
+        result.config(text="Std. Deviation of {} Column is {:.4f}".format(col_one.get(),res))
+        print("Standard Deviation calculated: ", res)
+    except KeyError:
+        messagebox.showinfo("Error!","Column name is not available")
+    except TypeError:
+        messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
+    except:
+        messagebox.showinfo("Error!","Something went wrong!")
+        
 stddev_button = Button(window, 
                       text="Std Deviation",
                       command=stdb,
@@ -425,11 +510,19 @@ stddev_button.place(x=170,
 # Missing Values
 
 def missingval():
-    global data1
-    res = data1.isnull().sum()
-    preview.config(text=res)
-    result.config(text="Missing Values")
-
+    try:
+        global data1
+        res = data1.isnull().sum()
+        preview.config(text=res)
+        result.config(text="Missing Values")
+        print("Missing values: \n ", res)
+    except KeyError:
+        messagebox.showinfo("Error!","Column name is not available")
+    except TypeError:
+        messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
+    except:
+        messagebox.showinfo("Error!","Something went wrong!")
+        
 missing_button = Button(window, 
                       text="Missing Val.",
                       command=missingval,
@@ -443,10 +536,17 @@ missing_button.place(x=170,
 # Preview
 
 def prevb():
-    global data1
-    preview.config(text=data1.head(5))
-    result.config(text="Data Preview")
-    
+    try:
+        global data1
+        preview.config(text=data1.head(5))
+        result.config(text="Data Preview")
+    except KeyError:
+        messagebox.showinfo("Error!","Column name is not available")
+    except TypeError:
+        messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
+    except:
+        messagebox.showinfo("Error!","Something went wrong!")
+        
 prev_button = Button(window, 
                       text="Preview",
                       command=prevb,
