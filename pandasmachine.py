@@ -6,11 +6,9 @@ from tkinter import messagebox
 from tkinter import filedialog
 import tkinter.font as tkFont
 import openpyxl
-
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import seaborn as sns
-
 
 window = Tk()
 window.geometry("780x400")
