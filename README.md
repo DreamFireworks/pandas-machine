@@ -3,7 +3,7 @@
 
 #### NOT DONE YET.
 
-### I made this program for teachers or who wants to learn descriptive statistics for the data.
+### I made this program for teachers or who wants to learn descriptive statistics from the data.
 
 ## Packages I used:
 
