@@ -2,7 +2,7 @@ import sys
 import subprocess
 import pkg_resources
 
-required = {'numpy','pandas','tkinter','openpyxl','seaborn','matplotlib'} 
+required = {'numpy','pandas','openpyxl','seaborn','matplotlib'} 
 installed = {pkg.key for pkg in pkg_resources.working_set}
 missing = required - installed
 
