@@ -17,7 +17,6 @@ window.resizable(width=False,
                  height=False)
 
 ### UPPER HALF
-
 # OpenFile
 filename = ""
 def openfile():
