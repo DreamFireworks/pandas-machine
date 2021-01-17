@@ -6,11 +6,9 @@ from tkinter import messagebox
 from tkinter import filedialog
 import tkinter.font as tkFont
 import openpyxl
-
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import seaborn as sns
-
 
 window = Tk()
 window.geometry("780x400")
@@ -886,8 +884,4 @@ button24.place(x=430,
               width=75, 
               height=40)
               
-                  
-# Graph output
-    #x515, y=205, w=225, h=160   
-
 window.mainloop()
