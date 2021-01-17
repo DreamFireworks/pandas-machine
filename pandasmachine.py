@@ -24,12 +24,12 @@ def openfile():
     filename = filedialog.askopenfilename()
 
 
-openbutton = Button(window,
-                    text = "Open",
+openbutton = Button(window, 
+                    text = "Open", 
                     command = openfile,
                     justify="center",
                     bg="#efefef")
-
+                    
 openbutton.place(x=0,
                  y=5,
                  width=100,
@@ -71,8 +71,8 @@ xlsbut.place(x=105,
              y=20,
              width=90,
              height=30)
-
-
+             
+             
 # Import
 data1=[]
 def readselect():
@@ -104,8 +104,8 @@ def readselect():
         messagebox.showinfo("Error!", "File not found")
     except:
         messagebox.showinfo("Error!", "Something went wrong!")
-
-importbutton = Button(window,
+        
+importbutton = Button(window, 
                       text="Import",
                       command=readselect,
                       justify="center",
@@ -198,13 +198,14 @@ def clearr():
     num1.delete(0, 100)
     num1.insert(0, 'Number')
     readselect()
+    
 
 clearbutton= Button(window,
                     text="C",
                     justify="center",
                     command=clearr,
                     bg="#efefef")
-
+                    
 clearbutton.place(x=757,
                  y=25,
                  width="20",
@@ -223,7 +224,7 @@ column_names.place(x=0,
 # Result
 
 result= Label(window,
-              text="Result will shown here",
+              text="Result will shown here", 
               justify="center",
               bg="#eeefff",
               relief="groove")
@@ -265,8 +266,8 @@ def meanb():
         messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
     except:
         messagebox.showinfo("Error!","Something went wrong!")
-
-mean_button = Button(window,
+        
+mean_button = Button(window, 
                      text="Mean",
                      command=meanb,
                      justify="center",
@@ -275,7 +276,7 @@ mean_button.place(x=0,
               y=205,
               width=75,
               height=40)
-
+              
 # Median
 
 def medianb():
@@ -291,7 +292,7 @@ def medianb():
     except:
         messagebox.showinfo("Error!","Something went wrong!")
 
-median_button = Button(window,
+median_button = Button(window, 
                       text="Median",
                       command=medianb,
                       justify="center",
@@ -316,7 +317,7 @@ def modeb():
     except:
         messagebox.showinfo("Error!","Something went wrong!")
 
-mode_button = Button(window,
+mode_button = Button(window, 
                       text="Mode",
                       command=modeb,
                       justify="center",
@@ -325,7 +326,7 @@ mode_button.place(x=0,
               y=295,
               width=75,
               height=40)
-
+              
 # observations
 
 def obsb():
@@ -340,8 +341,8 @@ def obsb():
         messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
     except:
         messagebox.showinfo("Error!","Something went wrong!")
-
-obs_button = Button(window,
+        
+obs_button = Button(window, 
                       text="Obs",
                       command=obsb,
                       justify="center",
@@ -351,8 +352,8 @@ obs_button.place(x=0,
               width=75,
               height=40)
 
-# Min
-
+# Min 
+ 
 def minb():
     try:
         global data1
@@ -366,7 +367,7 @@ def minb():
     except:
         messagebox.showinfo("Error!","Something went wrong!")
 
-min_button = Button(window,
+min_button = Button(window, 
                       text="Min",
                       command=minb,
                       justify="center",
@@ -375,7 +376,7 @@ min_button.place(x=85,
               y=205,
               width=75,
               height=40)
-
+              
 # Max
 
 def maxb():
@@ -390,8 +391,8 @@ def maxb():
         messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
     except:
         messagebox.showinfo("Error!","Something went wrong!")
-
-max_button = Button(window,
+        
+max_button = Button(window, 
                       text="Max",
                       command=maxb,
                       justify="center",
@@ -417,7 +418,7 @@ def shapeb():
     except:
         messagebox.showinfo("Error!","Something went wrong!")
 
-shape_button = Button(window,
+shape_button = Button(window, 
                       text="Shape",
                       command=shapeb,
                       justify="center",
@@ -442,15 +443,15 @@ def descb():
         messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
     except:
         messagebox.showinfo("Error!","Something went wrong!")
-
-describe_button = Button(window,
+        
+describe_button = Button(window, 
                       text="Describe",
                       command=descb,
                       justify="center",
                       bg="#efefef")
 describe_button.place(x=85,
               y=340,
-              width=75,
+              width=75, 
               height=40)
 
 
@@ -469,7 +470,7 @@ def varb():
     except:
         messagebox.showinfo("Error!","Something went wrong!")
 
-variance_button = Button(window,
+variance_button = Button(window, 
                       text="Variance",
                       command=varb,
                       justify="center",
@@ -478,7 +479,7 @@ variance_button.place(x=170,
               y=205,
               width=75,
               height=40)
-
+              
 # Standard Deviation
 
 def stdb():
@@ -493,8 +494,8 @@ def stdb():
         messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
     except:
         messagebox.showinfo("Error!","Something went wrong!")
-
-stddev_button = Button(window,
+        
+stddev_button = Button(window, 
                       text="Std Deviation",
                       command=stdb,
                       justify="center",
@@ -519,8 +520,8 @@ def missingval():
         messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
     except:
         messagebox.showinfo("Error!","Something went wrong!")
-
-missing_button = Button(window,
+        
+missing_button = Button(window, 
                       text="Missing Val.",
                       command=missingval,
                       justify="center",
@@ -529,7 +530,7 @@ missing_button.place(x=170,
               y=295,
               width=75,
               height=40)
-
+              
 # Preview
 
 def prevb():
@@ -543,8 +544,8 @@ def prevb():
         messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
     except:
         messagebox.showinfo("Error!","Something went wrong!")
-
-prev_button = Button(window,
+        
+prev_button = Button(window, 
                       text="Preview",
                       command=prevb,
                       justify="center",
@@ -560,7 +561,7 @@ def button13():
     pass
     """
     try:
-
+    
     except KeyError:
         messagebox.showinfo("Error!","Column name is not available")
     except TypeError:
@@ -569,8 +570,8 @@ def button13():
         messagebox.showinfo("Error!","Something went wrong!")
     """
 
-
-button13 = Button(window,
+ 
+button13 = Button(window, 
                       text="Button13",
                       command=passs,
                       justify="center",
@@ -579,14 +580,14 @@ button13.place(x=255,
               y=205,
               width=75,
               height=40)
-
+              
 # Button 14
 
 def button14():
     pass
     """
     try:
-
+    
     except KeyError:
         messagebox.showinfo("Error!","Column name is not available")
     except TypeError:
@@ -595,7 +596,7 @@ def button14():
         messagebox.showinfo("Error!","Something went wrong!")
     """
 
-button14 = Button(window,
+button14 = Button(window, 
                       text="Button14",
                       command=passs,
                       justify="center",
@@ -612,7 +613,7 @@ def button15():
     pass
     """
     try:
-
+    
     except KeyError:
         messagebox.showinfo("Error!","Column name is not available")
     except TypeError:
@@ -621,7 +622,7 @@ def button15():
         messagebox.showinfo("Error!","Something went wrong!")
     """
 
-button15 = Button(window,
+button15 = Button(window, 
                       text="Button15",
                       command=passs,
                       justify="center",
@@ -637,7 +638,7 @@ def button16():
     pass
     """
     try:
-
+    
     except KeyError:
         messagebox.showinfo("Error!","Column name is not available")
     except TypeError:
@@ -647,14 +648,14 @@ def button16():
     """
 
 
-button16 = Button(window,
+button16 = Button(window, 
                       text="Button16",
                       command=passs,
                       justify="center",
                       bg="#efefef")
 button16.place(x=255,
               y=340,
-              width=75,
+              width=75, 
               height=40)
 
 
@@ -667,18 +668,16 @@ def linep():
         figure1 = plt.Figure(figsize=(2,1), dpi=50)
         ax1 = figure1.add_subplot(111)
         ax1.plot(data1[col_one.get()], color = 'g')
-        line1 = FigureCanvasTkAgg(figure1, window)
+        line1 = FigureCanvasTkAgg(figure1, window) 
         line1.get_tk_widget().place(x=525,y=205,width=240,height=175)
         ax1.set_xlabel(data1[col_one.get()])
     except KeyError:
         messagebox.showinfo("Error!","Column name is not available")
     except TypeError:
         messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
-    except:
-        messagebox.showinfo("Error!","Something went wrong!")
-
-
-line_plot = Button(window,
+    
+    
+line_plot = Button(window, 
                       text="Line",
                       command=linep,
                       justify="center",
@@ -687,7 +686,7 @@ line_plot.place(x=345,
               y=205,
               width=75,
               height=40)
-
+              
 # Histogram
 
 def histp():
@@ -696,18 +695,16 @@ def histp():
         figure1 = plt.Figure(figsize=(2,1), dpi=50)
         ax1 = figure1.add_subplot(111)
         ax1.hist(data1[col_one.get()], color = 'g')
-        scatter1 = FigureCanvasTkAgg(figure1, window)
-        scatter1.get_tk_widget().place(x=525,y=205,width=240,height=175)
+        hist1 = FigureCanvasTkAgg(figure1, window) 
+        hist1.get_tk_widget().place(x=525,y=205,width=240,height=175) 
         ax1.set_xlabel(data1[col_one.get()])
     except KeyError:
         messagebox.showinfo("Error!","Column name is not available")
     except TypeError:
         messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
-    except:
-        messagebox.showinfo("Error!","Something went wrong!")
 
 #bins=num1.get()
-hist_plot = Button(window,
+hist_plot = Button(window, 
                       text="Hist",
                       command=histp,
                       justify="center",
@@ -725,19 +722,18 @@ def scatterp():
         figure1 = plt.Figure(figsize=(2,1), dpi=50)
         ax1 = figure1.add_subplot(111)
         ax1.scatter(data1[col_one.get()],data1[col_two.get()], color = 'g')
-        scatter1 = FigureCanvasTkAgg(figure1, window)
+        scatter1 = FigureCanvasTkAgg(figure1, window) 
         scatter1.get_tk_widget().place(x=525,y=205,width=240,height=175)
         ax1.set_xlabel(data1[col_one.get()])
     except KeyError:
         messagebox.showinfo("Error!","Column name is not available")
     except TypeError:
         messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
-    except:
-        messagebox.showinfo("Error!","Something went wrong!")
+
 # Graph output
     #x=515,y=205,width=240,height=175
-
-scatter_plot = Button(window,
+    
+scatter_plot = Button(window, 
                       text="Scatter",
                       command=scatterp,
                       justify="center",
@@ -747,7 +743,7 @@ scatter_plot.place(x=345,
               width=75,
               height=40)
 
-# Regplot
+# Regplot   
 
 def regressionp():
     try:
@@ -755,24 +751,22 @@ def regressionp():
         figure1 = plt.Figure(figsize=(2,1), dpi=50)
         ax1 = figure1.add_subplot(111)
         sns.regplot(data1[col_one.get()],data1[col_two.get()], color = 'g',ax=ax1)
-        regpl = FigureCanvasTkAgg(figure1, window)
+        regpl = FigureCanvasTkAgg(figure1, window) 
         regpl.get_tk_widget().place(x=525,y=205,width=240,height=175)
     except KeyError:
         messagebox.showinfo("Error!","Column name is not available")
     except TypeError:
         messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
-    except:
-        messagebox.showinfo("Error!","Something went wrong!")
 
 
-regression_button = Button(window,
+regression_button = Button(window, 
                       text="Regression",
                       command=regressionp,
                       justify="center",
                       bg="#efefef")
 regression_button.place(x=345,
               y=340,
-              width=75,
+              width=75, 
               height=40)
 
 # BoxPlot
@@ -783,17 +777,16 @@ def boxplotb():
         figure1 = plt.Figure(figsize=(2,1), dpi=50)
         ax1 = figure1.add_subplot(111)
         sns.boxplot(data1[col_one.get()], color = 'g',ax=ax1)
-        boxpl = FigureCanvasTkAgg(figure1, window)
+        boxpl = FigureCanvasTkAgg(figure1, window) 
         boxpl.get_tk_widget().place(x=525,y=205,width=240,height=175)
     except KeyError:
         messagebox.showinfo("Error!","Column name is not available")
     except TypeError:
         messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
-    except:
-        messagebox.showinfo("Error!","Something went wrong!")
 
 
-boxplot_button = Button(window,
+
+boxplot_button = Button(window, 
                       text="Boxplot",
                       command=boxplotb,
                       justify="center",
@@ -802,7 +795,7 @@ boxplot_button.place(x=430,
               y=205,
               width=75,
               height=40)
-
+              
 # SwarmPlot
 
 def swarmp():
@@ -811,16 +804,15 @@ def swarmp():
         figure1 = plt.Figure(figsize=(2,1), dpi=50)
         ax1 = figure1.add_subplot(111)
         sns.swarmplot(data1[col_one.get()],color='g',ax=ax1)
-        swarmpl = FigureCanvasTkAgg(figure1, window)
+        swarmpl = FigureCanvasTkAgg(figure1, window) 
         swarmpl.get_tk_widget().place(x=525,y=205,width=240,height=175)
     except KeyError:
         messagebox.showinfo("Error!","Column name is not available")
     except TypeError:
         messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
-    except:
-        messagebox.showinfo("Error!","Something went wrong!")
 
-swarm_button = Button(window,
+        
+swarm_button = Button(window, 
                       text="Swarm Plot",
                       command=swarmp,
                       justify="center",
@@ -831,7 +823,7 @@ swarm_button.place(x=430,
              height=40)
 
 
-# kdeplot
+# kdeplot   
 
 def kdepl():
     try:
@@ -839,16 +831,15 @@ def kdepl():
         figure1 = plt.Figure(figsize=(2,1), dpi=50)
         ax1 = figure1.add_subplot(111)
         sns.kdeplot(data1[col_one.get()],color='g',ax=ax1)
-        swarmpl = FigureCanvasTkAgg(figure1, window)
-        swarmpl.get_tk_widget().place(x=525,y=205,width=240,height=175)
+        kdepl1 = FigureCanvasTkAgg(figure1, window) 
+        kdepl1.get_tk_widget().place(x=525,y=205,width=240,height=175)
     except KeyError:
         messagebox.showinfo("Error!","Column name is not available")
     except TypeError:
         messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
-    except:
-        messagebox.showinfo("Error!","Something went wrong!")
 
-kde_button = Button(window,
+
+kde_button = Button(window, 
                       text="KDE Plot",
                       command=kdepl,
                       justify="center",
@@ -864,7 +855,7 @@ def button24():
     pass
     """
     try:
-
+    
     except KeyError:
         messagebox.showinfo("Error!","Column name is not available")
     except TypeError:
@@ -873,14 +864,14 @@ def button24():
         messagebox.showinfo("Error!","Something went wrong!")
     """
 
-button24 = Button(window,
+button24 = Button(window, 
                       text="Button24",
                       command=passs,
                       justify="center",
                       bg="#efefef")
 button24.place(x=430,
               y=340,
-              width=75,
+              width=75, 
               height=40)
-
+              
 window.mainloop()
