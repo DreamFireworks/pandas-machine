@@ -556,6 +556,20 @@ prev_button.place(x=170,
               height=40)
 
 # Button 13
+
+def button13():
+    pass
+    """
+    try:
+    
+    except KeyError:
+        messagebox.showinfo("Error!","Column name is not available")
+    except TypeError:
+        messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
+    except:
+        messagebox.showinfo("Error!","Something went wrong!")
+    """
+
  
 button13 = Button(window, 
                       text="Button13",
@@ -568,6 +582,19 @@ button13.place(x=255,
               height=40)
               
 # Button 14
+
+def button14():
+    pass
+    """
+    try:
+    
+    except KeyError:
+        messagebox.showinfo("Error!","Column name is not available")
+    except TypeError:
+        messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
+    except:
+        messagebox.showinfo("Error!","Something went wrong!")
+    """
 
 button14 = Button(window, 
                       text="Button14",
@@ -582,6 +609,19 @@ button14.place(x=255,
 
 # Button 15
 
+def button15():
+    pass
+    """
+    try:
+    
+    except KeyError:
+        messagebox.showinfo("Error!","Column name is not available")
+    except TypeError:
+        messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
+    except:
+        messagebox.showinfo("Error!","Something went wrong!")
+    """
+
 button15 = Button(window, 
                       text="Button15",
                       command=passs,
@@ -593,6 +633,20 @@ button15.place(x=255,
               height=40)
 
 # Button 16
+
+def button16():
+    pass
+    """
+    try:
+    
+    except KeyError:
+        messagebox.showinfo("Error!","Column name is not available")
+    except TypeError:
+        messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
+    except:
+        messagebox.showinfo("Error!","Something went wrong!")
+    """
+
 
 button16 = Button(window, 
                       text="Button16",
@@ -609,14 +663,22 @@ button16.place(x=255,
 
 # Line
 def linep():
-    global data1
-    figure1 = plt.Figure(figsize=(2,1), dpi=50)
-    ax1 = figure1.add_subplot(111)
-    ax1.plot(data1[col_one.get()], color = 'g')
-    line1 = FigureCanvasTkAgg(figure1, window) 
-    line1.get_tk_widget().place(x=525,y=205,width=240,height=175)
-    ax1.set_xlabel(data1[col_one.get()])
-
+    try:
+        global data1
+        figure1 = plt.Figure(figsize=(2,1), dpi=50)
+        ax1 = figure1.add_subplot(111)
+        ax1.plot(data1[col_one.get()], color = 'g')
+        line1 = FigureCanvasTkAgg(figure1, window) 
+        line1.get_tk_widget().place(x=525,y=205,width=240,height=175)
+        ax1.set_xlabel(data1[col_one.get()])
+    except KeyError:
+        messagebox.showinfo("Error!","Column name is not available")
+    except TypeError:
+        messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
+    except:
+        messagebox.showinfo("Error!","Something went wrong!")
+    
+    
 line_plot = Button(window, 
                       text="Line",
                       command=linep,
@@ -630,13 +692,21 @@ line_plot.place(x=345,
 # Histogram
 
 def histp():
-    global data1
-    figure1 = plt.Figure(figsize=(2,1), dpi=50)
-    ax1 = figure1.add_subplot(111)
-    ax1.hist(data1[col_one.get()], color = 'g')
-    scatter1 = FigureCanvasTkAgg(figure1, window) 
-    scatter1.get_tk_widget().place(x=525,y=205,width=240,height=175) 
-    ax1.set_xlabel(data1[col_one.get()])
+    try:
+        global data1
+        figure1 = plt.Figure(figsize=(2,1), dpi=50)
+        ax1 = figure1.add_subplot(111)
+        ax1.hist(data1[col_one.get()], color = 'g')
+        scatter1 = FigureCanvasTkAgg(figure1, window) 
+        scatter1.get_tk_widget().place(x=525,y=205,width=240,height=175) 
+        ax1.set_xlabel(data1[col_one.get()])
+    except KeyError:
+        messagebox.showinfo("Error!","Column name is not available")
+    except TypeError:
+        messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
+    except:
+        messagebox.showinfo("Error!","Something went wrong!")
+
 #bins=num1.get()
 hist_plot = Button(window, 
                       text="Hist",
@@ -651,13 +721,20 @@ hist_plot.place(x=345,
 
 # Scatter
 def scatterp():
-    global data1
-    figure1 = plt.Figure(figsize=(2,1), dpi=50)
-    ax1 = figure1.add_subplot(111)
-    ax1.scatter(data1[col_one.get()],data1[col_two.get()], color = 'g')
-    scatter1 = FigureCanvasTkAgg(figure1, window) 
-    scatter1.get_tk_widget().place(x=525,y=205,width=240,height=175)
-    ax1.set_xlabel(data1[col_one.get()])
+    try:
+        global data1
+        figure1 = plt.Figure(figsize=(2,1), dpi=50)
+        ax1 = figure1.add_subplot(111)
+        ax1.scatter(data1[col_one.get()],data1[col_two.get()], color = 'g')
+        scatter1 = FigureCanvasTkAgg(figure1, window) 
+        scatter1.get_tk_widget().place(x=525,y=205,width=240,height=175)
+        ax1.set_xlabel(data1[col_one.get()])
+    except KeyError:
+        messagebox.showinfo("Error!","Column name is not available")
+    except TypeError:
+        messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
+    except:
+        messagebox.showinfo("Error!","Something went wrong!")
 # Graph output
     #x=515,y=205,width=240,height=175
     
@@ -674,12 +751,20 @@ scatter_plot.place(x=345,
 # Regplot   
 
 def regressionp():
-    global data1
-    figure1 = plt.Figure(figsize=(2,1), dpi=50)
-    ax1 = figure1.add_subplot(111)
-    sns.regplot(data1[col_one.get()],data1[col_two.get()], color = 'g',ax=ax1)
-    regpl = FigureCanvasTkAgg(figure1, window) 
-    regpl.get_tk_widget().place(x=525,y=205,width=240,height=175)
+    try:
+        global data1
+        figure1 = plt.Figure(figsize=(2,1), dpi=50)
+        ax1 = figure1.add_subplot(111)
+        sns.regplot(data1[col_one.get()],data1[col_two.get()], color = 'g',ax=ax1)
+        regpl = FigureCanvasTkAgg(figure1, window) 
+        regpl.get_tk_widget().place(x=525,y=205,width=240,height=175)
+    except KeyError:
+        messagebox.showinfo("Error!","Column name is not available")
+    except TypeError:
+        messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
+    except:
+        messagebox.showinfo("Error!","Something went wrong!")
+
 
 regression_button = Button(window, 
                       text="Regression",
@@ -694,12 +779,20 @@ regression_button.place(x=345,
 # BoxPlot
 
 def boxplotb():
-    global data1
-    figure1 = plt.Figure(figsize=(2,1), dpi=50)
-    ax1 = figure1.add_subplot(111)
-    sns.boxplot(data1[col_one.get()], color = 'g',ax=ax1)
-    boxpl = FigureCanvasTkAgg(figure1, window) 
-    boxpl.get_tk_widget().place(x=525,y=205,width=240,height=175)
+    try:
+        global data1
+        figure1 = plt.Figure(figsize=(2,1), dpi=50)
+        ax1 = figure1.add_subplot(111)
+        sns.boxplot(data1[col_one.get()], color = 'g',ax=ax1)
+        boxpl = FigureCanvasTkAgg(figure1, window) 
+        boxpl.get_tk_widget().place(x=525,y=205,width=240,height=175)
+    except KeyError:
+        messagebox.showinfo("Error!","Column name is not available")
+    except TypeError:
+        messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
+    except:
+        messagebox.showinfo("Error!","Something went wrong!")
+
 
 boxplot_button = Button(window, 
                       text="Boxplot",
@@ -714,13 +807,19 @@ boxplot_button.place(x=430,
 # SwarmPlot
 
 def swarmp():
-    global data1
-    figure1 = plt.Figure(figsize=(2,1), dpi=50)
-    ax1 = figure1.add_subplot(111)
-    sns.swarmplot(data1[col_one.get()],color='g',ax=ax1)
-    swarmpl = FigureCanvasTkAgg(figure1, window) 
-    swarmpl.get_tk_widget().place(x=525,y=205,width=240,height=175)
-
+    try:
+        global data1
+        figure1 = plt.Figure(figsize=(2,1), dpi=50)
+        ax1 = figure1.add_subplot(111)
+        sns.swarmplot(data1[col_one.get()],color='g',ax=ax1)
+        swarmpl = FigureCanvasTkAgg(figure1, window) 
+        swarmpl.get_tk_widget().place(x=525,y=205,width=240,height=175)
+    except KeyError:
+        messagebox.showinfo("Error!","Column name is not available")
+    except TypeError:
+        messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
+    except:
+        messagebox.showinfo("Error!","Something went wrong!")
         
 swarm_button = Button(window, 
                       text="Swarm Plot",
@@ -736,12 +835,19 @@ swarm_button.place(x=430,
 # kdeplot   
 
 def kdepl():
-    global data1
-    figure1 = plt.Figure(figsize=(2,1), dpi=50)
-    ax1 = figure1.add_subplot(111)
-    sns.kdeplot(data1[col_one.get()],color='g',ax=ax1)
-    swarmpl = FigureCanvasTkAgg(figure1, window) 
-    swarmpl.get_tk_widget().place(x=525,y=205,width=240,height=175)
+    try:
+        global data1
+        figure1 = plt.Figure(figsize=(2,1), dpi=50)
+        ax1 = figure1.add_subplot(111)
+        sns.kdeplot(data1[col_one.get()],color='g',ax=ax1)
+        swarmpl = FigureCanvasTkAgg(figure1, window) 
+        swarmpl.get_tk_widget().place(x=525,y=205,width=240,height=175)
+    except KeyError:
+        messagebox.showinfo("Error!","Column name is not available")
+    except TypeError:
+        messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
+    except:
+        messagebox.showinfo("Error!","Something went wrong!")
 
 kde_button = Button(window, 
                       text="KDE Plot",
@@ -755,6 +861,19 @@ kde_button.place(x=430,
 
 # Button 24
 
+def button24():
+    pass
+    """
+    try:
+    
+    except KeyError:
+        messagebox.showinfo("Error!","Column name is not available")
+    except TypeError:
+        messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
+    except:
+        messagebox.showinfo("Error!","Something went wrong!")
+    """
+
 button24 = Button(window, 
                       text="Button24",
                       command=passs,
@@ -765,5 +884,4 @@ button24.place(x=430,
               width=75, 
               height=40)
               
-                  
 window.mainloop()
