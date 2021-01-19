@@ -675,8 +675,7 @@ def linep():
         messagebox.showinfo("Error!","Column name is not available")
     except TypeError:
         messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
-    except:
-        messagebox.showinfo("Error!","Something went wrong!")
+
     
     
 line_plot = Button(window, 
@@ -704,8 +703,7 @@ def histp():
         messagebox.showinfo("Error!","Column name is not available")
     except TypeError:
         messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
-    except:
-        messagebox.showinfo("Error!","Something went wrong!")
+
 
 #bins=num1.get()
 hist_plot = Button(window, 
@@ -733,8 +731,7 @@ def scatterp():
         messagebox.showinfo("Error!","Column name is not available")
     except TypeError:
         messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
-    except:
-        messagebox.showinfo("Error!","Something went wrong!")
+
 # Graph output
     #x=515,y=205,width=240,height=175
     
@@ -762,8 +759,6 @@ def regressionp():
         messagebox.showinfo("Error!","Column name is not available")
     except TypeError:
         messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
-    except:
-        messagebox.showinfo("Error!","Something went wrong!")
 
 
 regression_button = Button(window, 
@@ -790,8 +785,7 @@ def boxplotb():
         messagebox.showinfo("Error!","Column name is not available")
     except TypeError:
         messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
-    except:
-        messagebox.showinfo("Error!","Something went wrong!")
+
 
 
 boxplot_button = Button(window, 
@@ -818,8 +812,7 @@ def swarmp():
         messagebox.showinfo("Error!","Column name is not available")
     except TypeError:
         messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
-    except:
-        messagebox.showinfo("Error!","Something went wrong!")
+
         
 swarm_button = Button(window, 
                       text="Swarm Plot",
@@ -846,8 +839,7 @@ def kdepl():
         messagebox.showinfo("Error!","Column name is not available")
     except TypeError:
         messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
-    except:
-        messagebox.showinfo("Error!","Something went wrong!")
+
 
 kde_button = Button(window, 
                       text="KDE Plot",
