@@ -559,10 +559,9 @@ prev_button.place(x=170,
 # Correlation
 
 def corrb():
-
     try:
         global data1
-        res = np.corrcoef(data1[col_one.get()],data1[col_two.get()])
+        res = data1[col_one.get()].corr(data1[col_two.get()])
         result.config(text=res)
     except KeyError:
         messagebox.showinfo("Error!","Column name is not available")
