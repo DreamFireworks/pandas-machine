@@ -562,7 +562,7 @@ def corrb():
     try:
         global data1
         res = data1[col_one.get()].corr(data1[col_two.get()])
-        result.config(text=res)
+        result.config(text="Correlation between {} and {} Column is {:.4f}".format(col_one.get(),col_two.get(),res)
     except KeyError:
         messagebox.showinfo("Error!","Column name is not available")
     except TypeError:
