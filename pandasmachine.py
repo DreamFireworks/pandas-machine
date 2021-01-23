@@ -582,12 +582,13 @@ corr_button.place(x=255,
               width=75,
               height=40)
 
-# Button 14
+# Covariance
 
-def button14():
-    pass
-    """
+def covb():
     try:
+        global data1
+        res = np.cov(data1[col_one.get()],data1[col_two.get()])
+        result.config(text = res)
 
     except KeyError:
         messagebox.showinfo("Error!","Column name is not available")
@@ -595,14 +596,13 @@ def button14():
         messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
     except:
         messagebox.showinfo("Error!","Something went wrong!")
-    """
 
-button14 = Button(window,
-                      text="Button14",
-                      command=passs,
+cov_button = Button(window,
+                      text="Covariance",
+                      command=covb,
                       justify="center",
                       bg="#eeefff")
-button14.place(x=255,
+cov_button.place(x=255,
              y=250,
              width=75,
              height=40)
