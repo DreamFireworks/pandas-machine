@@ -457,26 +457,37 @@ prev_button.place(x=170,
               width=75,
               height=40)
 
-# Button 13
+# Corr
  
-button13 = Button(window, 
-                      text="Button13",
-                      command=passs,
+def corrb():
+    global data1
+    res = np.corrcoef(data1[col_one.get()],data1[col_two.get()])
+    result.config(text=res) 
+    print(np.corrcoef(data1[col_one.get()],data1[col_two.get()])
+    
+    
+corr_button = Button(window, 
+                      text="Correlation",
+                      command=corrb,
                       justify="center",
                       bg="#efefef")
-button13.place(x=255,
+corr_button.place(x=255,
               y=205,
               width=75,
               height=40)
               
-# Button 14
+# Cov
 
-button14 = Button(window, 
-                      text="Button14",
-                      command=passs,
+def covv():
+    pass
+    #np.cov
+
+cov_button = Button(window, 
+                      text="Covariance",
+                      command=covv,
                       justify="center",
                       bg="#efefef")
-button14.place(x=255,
+cov_button.place(x=255,
              y=250,
              width=75,
              height=40)
