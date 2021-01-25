@@ -9,6 +9,7 @@ import openpyxl
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import seaborn as sns
+import time
 
 window = Tk()
 window.geometry("780x400")
@@ -586,8 +587,8 @@ corr_button.place(x=255,
 def covb():
     try:
         global data1
-        res = np.cov(data1[col_one.get()],data1[col_two.get()])
-        result.config(text = res)
+        res = data1[col_one.get()].cov(data1[col_two.get()])
+        result.config(text="Covariance between {} and {} Column is {:.4f}".format(col_one.get(),col_two.get(),res))
 
     except KeyError:
         messagebox.showinfo("Error!","Column name is not available")
