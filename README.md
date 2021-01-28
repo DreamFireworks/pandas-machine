@@ -11,19 +11,15 @@
 * Numpy
 * Tkinter
 * Matplotlib
+* seaborn
 * openpyxl
-
 
 ## Installation of packages:
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install keyboard and pyautogui.
 
 ```bash
-pip install pandas
-pip install numpy
-pip install Tkinter
-pip install matplotlib
-pip install openpyxl
+pip install numpy pandas matplotlib seaborn openpyxl
 ```
 
 ## License
