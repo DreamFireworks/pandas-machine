@@ -608,24 +608,25 @@ cov_button.place(x=255,
              height=40)
 
 
-# Button 15
+# Range
 
-def button15():
-    pass
-    """
+def rangeb():
     try:
-
+        global data1
+        res = np.max(data1[col_one.get()]) - np.min(data1[col_one.get()])
+        result.config(text="Range of {} Column is {:.4f}".format(col_one.get(),res))
+        print(res)
     except KeyError:
         messagebox.showinfo("Error!","Column name is not available")
     except TypeError:
         messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
     except:
         messagebox.showinfo("Error!","Something went wrong!")
-    """
+    
 
 button15 = Button(window,
-                      text="Button15",
-                      command=passs,
+                      text="Range",
+                      command=rangeb,
                       justify="center",
                       bg="#eeefff")
 button15.place(x=255,
