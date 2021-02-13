@@ -634,28 +634,32 @@ button15.place(x=255,
               width=75,
               height=40)
 
-# Button 16
+# IQR
 
-def button16():
-    pass
-    """
+def iqr():
     try:
-
+        global data1
+        q75, q25 = np.percentile(data1[col_one.get()], [75 ,25])
+        iqr = q75 - q25
+        res = iqr
+        result.config(text="IQR of {} Column is {:.4f}".format(col_one.get(),res))
+        print(res)
+        messagebox.showinfo("Under Development","It can give wrong outputs")
     except KeyError:
         messagebox.showinfo("Error!","Column name is not available")
     except TypeError:
         messagebox.showinfo("Error!","Type is not suitable for calculation, or data is not imported")
     except:
         messagebox.showinfo("Error!","Something went wrong!")
-    """
+    
 
 
-button16 = Button(window,
-                      text="Button16",
-                      command=passs,
+iqr_button = Button(window,
+                      text="IQR",
+                      command=iqr,
                       justify="center",
                       bg="#eeefff")
-button16.place(x=255,
+iqr_button.place(x=255,
               y=340,
               width=75,
               height=40)
